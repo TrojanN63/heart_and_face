@@ -1,4 +1,6 @@
 import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
 
 file = 'data.csv'
 data = pd.read_csv(file)
@@ -28,21 +30,27 @@ def find_peak():
             response += f'{data["time"][i]}\n'
     return response
 
-def get_freq(start, end, var):
+def get_freq(start, end, var, avg):
     if start==-1:
         start = float(data['time'][0])
     if end==-1:
         end = float(data['time'][get_rows()-2])
+    if avg==-1:
+        avg = calc_avg()
     rev = 0
     for i in range(get_rows()-1):
         time = float(data['time'][i])
         ypos = float(data['ypos'][i])
-        if time >= start and time <= end and ypos<(calc_avg()-var):
+        if time >= start and time <= end and ypos<(avg-var):
             rev+=1
     rps = rev / (end - start)
     return rps
 
-print(f'Avarage: {calc_avg()}')
-print(f'''List of every time ypos was bellow avarage:
-{find_peak()}''')
-print(f'Relovutions per second: {get_freq(-1,-1, 0.001)}')
+def show_data():
+    nums = []
+    for i in data['ypos']:
+        nums.append(float(i))
+    
+    plt.plot(nums, ls='solid')
+    plt.show()
+
