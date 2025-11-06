@@ -1,6 +1,6 @@
 # heart_and_face
 ## main.py
-O código 'main.py' funciona a partir do framework MediaPipe, utilizando da solução 'FACE_MESH' para coletar os landmarks da face. Utilizando os pontos de números 468 e 158, o código mede a distância entre o centro do olho e a pálpebra esquerda. A partir da biblioteca 'time', ele é capaz de cronometrar a execução do programa. Com estes dados, o código cria ou atualiza um arquivo 'data.csv', extensão que separa valores por linhas e colunas, nesse caso sendo as colunas ypos e time, tornando-o sensível a quando a pálpebra se move em relação ao olho.
+O código 'main.py' funciona a partir do framework MediaPipe, utilizando da solução 'FACE_MESH' para coletar os landmarks da face. Utilizando os pontos de números 468 e 159, o código mede a distância entre o centro do olho e a pálpebra esquerda. A partir da biblioteca 'time', ele é capaz de cronometrar a execução do programa. Com estes dados, o código cria ou atualiza um arquivo 'data.csv', extensão que separa valores por linhas e colunas, nesse caso sendo as colunas ypos e time, tornando-o sensível a quando a pálpebra se move em relação ao olho.
 ## view_data.py
 Este segundo programa realiza a análise dos dados coletados pelo programa anterior, oferecendo diversas funções para observação, dentre elas:
 * get_rows(): retorna a quantidade de pares 'tempo' e 'posição' o código coletou.
