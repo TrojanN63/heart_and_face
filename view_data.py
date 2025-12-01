@@ -54,3 +54,18 @@ def show_data():
     plt.plot(nums, ls='solid')
     plt.show()
 
+def plot_h():
+    nums = []
+    for i in data['horizontal_pos']:
+        nums.append(float(i))
+
+    plt.plot(nums, ls='solid')
+    plt.show()
+
+def plot_v():
+    nums = []
+    for i in data['vertical_pos']:
+        nums.append(float(i))
+
+    plt.plot(nums, ls='solid')
+    plt.show()
