@@ -9,7 +9,7 @@ mp_draw = mp.solutions.drawing_utils
 mp_face = mp.solutions.face_mesh
 spec_landmark = mp_draw.DrawingSpec(color=(0,255,0), thickness=0, circle_radius=0)
 spec_connection = mp_draw.DrawingSpec(color=(0,0,255), thickness=2)
-content = 'ypos,time,horizontal_pos,vertical_pos\n'
+content = 'ypos,time,horizontal_pos,vertical_pos,open\n'
 
 with mp_face.FaceMesh(refine_landmarks=True, min_detection_confidence=0.5, min_tracking_confidence=0.5) as face:
     while True:
@@ -46,7 +46,8 @@ with mp_face.FaceMesh(refine_landmarks=True, min_detection_confidence=0.5, min_t
             timer = end_time - start_time
             pos_x = x468 - middle_x
             pos_y = y468 - middle_y
-            content += f'{y468-y159},{timer},{pos_x},{pos_y}\n'
+            opened = lm_145.y - y159
+            content += f'{y468-y159},{timer},{pos_x},{pos_y},{opened}\n'
             with open('data.csv','w') as file:
                 file.write(content)
         if istrue:

@@ -69,3 +69,27 @@ def plot_v():
 
     plt.plot(nums, ls='solid')
     plt.show()
+
+def plot_o():
+    nums = []
+    for i in data['open']:
+        nums.append(float(i))
+    
+    plt.plot(nums, ls='solid')
+    plt.show()
+
+def plot_all():
+    nums_h = []
+    nums_v = []
+    nums_o = []
+    plt.text(-1,data['horizontal_pos'][0],"pos_h")
+    plt.text(-1,data['vertical_pos'][0],"pos_v")
+    plt.text(-1,data['open'][0],"abertura")
+    for i in range(get_rows() -1):
+        nums_h.append(float(data['horizontal_pos'][i]))
+        nums_v.append(float(data['vertical_pos'][i]))
+        nums_o.append(float(data['open'][i]))
+    plt.plot(nums_h, ls='solid')
+    plt.plot(nums_v, ls='solid')
+    plt.plot(nums_o, ls='solid')
+    plt.show()
