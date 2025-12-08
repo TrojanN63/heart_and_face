@@ -1,4 +1,19 @@
 # heart_and_face
+## Como usar:
+Ao clonar o repositório com (necessita do git instalado):
+`git clone https://github.com/TrojanN63/heart_and_face`
+É necessário instalar o pacote do mediapie (necessita do pip):
+`pip install mediapipe`
+Então, podemos rodar o código main.py que iniciará a experiência (necessita do python):
+`python main.py`
+para interromper o a captura de landmarks, aperte a tecla 'd'.
+Depois disto, os dados devem estar armazenados no arquivo data.csv, permitindo análise pelo programa view_data.py. Este código conta com funções, que podem ser usadas por:
+`python` - abre a tela de comandos do python.
+`from view_data import <nome da função>` - importa a função desejada (substitua pelo nome da função sem parênteses).
+então:
+`<função>()`
+e isto dará os resultados esperados.
+
 ## main.py
 O código 'main.py' funciona a partir do framework MediaPipe, utilizando da solução 'FACE_MESH' para coletar os landmarks da face. Utilizando os pontos de números 468 e 159, o código mede a distância entre o centro do olho e a pálpebra esquerda. A partir da biblioteca 'time', ele é capaz de cronometrar a execução do programa. Com estes dados, o código cria ou atualiza um arquivo 'data.csv', extensão que separa valores por linhas e colunas, nesse caso sendo as colunas ypos e time, tornando-o sensível a quando a pálpebra se move em relação ao olho.
 ## view_data.py
